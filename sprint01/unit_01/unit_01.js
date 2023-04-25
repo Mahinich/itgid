@@ -52,11 +52,9 @@ document.querySelector('.out-10').innerHTML = '<h2>Hi</h2>';
 // Task 11.
 // На странице создан div.out-11. Запишите внутрь него строку '123'. Для записи используйте innerHTML. Второй операцией - допишите в div.out-11 строку '456'. Для дозаписи примените +=. Обратите внимание - код уже набран, вам нужно удалить комментарий и изучить принцип работы. 
 
-// document.querySelector('.out-11').innerHTML = '123';
-// document.querySelector('.out-11').innerHTML += '345';
-
 document.querySelector('.out-11').innerHTML = '123';
 document.querySelector('.out-11').innerHTML += '345';
+
 
 
 // Task 12.
@@ -93,16 +91,14 @@ document.querySelector('.out-15').innerHTML = y1 / y2;
 let x1 = 'Hello';
 let x2 = 5;
 
-document.querySelector('.out-16').innerHTML = x1 * x2;
+document.querySelector('.out-16').innerHTML = x1 + x2;
 
 // Task 17.
 // Получите div.out-17 в переменную out17. Выведите эту переменную в консоль. Изучите вывод.
+
+
 let out17 = document.querySelector('.out-17');
 console.log(out17);
-
-// let out17 = document.querySelector('.out-17');
-// console.log(out17);
-console.dir(out17);
 
 // Task 18.
 // Получите div.out-18 в переменную out18. Выведите эту переменную в консоль. Присвойте out18 значение 5 (out18 = 5). Выведите переменную в консоль. Изучите вывод.
@@ -118,15 +114,12 @@ console.log(out18);
 // Получите div.out-19 в переменную out19. Выведите в консоль out19. Теперь получите в эту же переменную out19 блок div c классом out-19-test. Выведите переменную out19 в консоль. Изучите что изменилось.
 let out19 = document.querySelector('div.out-19');
 console.log(out19);
-out19 = document.querySelector('.out-19-test')
 
+out19 = document.querySelector('.out-19-test');
 console.log(out19);
 
 // Task 20
 // Получите div.out-20 в переменную out20. C помощью textContent запишите в него строку '<h2>Hi</h2>'. Изучите результат. Посмотрите как этот вывод отличается от вывода в 10 task.
-let out20 = document.querySelector('div.out-20');
 
+let out20 = document.querySelector('.out-20');
 out20.textContent = '<h2>Hi</h2>';
-
-//let out20 = document.querySelector('.out-20');
-// out20.textContent = '<h2>Hi</h2>';
