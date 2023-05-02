@@ -81,9 +81,14 @@ document.querySelector('.b-6').onclick = f6;
 
 function f7() {
     const input = document.querySelector('.i-7');
+    const output = document.querySelector('.out-72');
 
     document.querySelector('div.out-71').textContent = input.value;
-    document.querySelector('div.out-72').textContent = input.value.length;
+    if (input.value.length >= 6) {
+        output.textContent = 1;
+    } else {
+        output.textContent = 0;
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
