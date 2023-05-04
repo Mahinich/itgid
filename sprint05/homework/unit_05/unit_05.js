@@ -243,8 +243,8 @@ document.querySelector('.b-12').onclick = t12;
 function t13() {
   let inputs = document.querySelectorAll('.i-13');
 
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].value = 1;
+  for (let i = 1; i <= inputs.length; i++) {
+    inputs[i - 1].value = i;
   }
 }
 
