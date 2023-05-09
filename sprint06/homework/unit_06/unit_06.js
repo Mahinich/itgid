@@ -12,7 +12,7 @@ function t1() {
     for (let k = 0; k < 3; k++) {
       out += '*';
     }
-    out += '-';
+    out += '_';
   }
 
   document.querySelector('.out-1').innerHTML = out;
@@ -153,9 +153,9 @@ document.querySelector('.b-6').onclick = t6;
 function t7() {
   let out = '';
 
-  for (let i = 1; i <= 4; i++) {
-    for (let k = 0; k < 4 - (4 - i); k++) {
-      out += '* ';
+  for (let i = 0; i <= 3; i++) {
+    for (let k = 0; k <= i; k++) {
+      out += '*';
     }
     out += `<br>`;
   }
@@ -178,9 +178,9 @@ document.querySelector('.b-7').onclick = t7;
 function t8() {
   let out = '';
 
-  for (let i = 0; i < 5; i++) {
-    for (let k = 0; k < 5 - i; k++) {
-      out += '* ';
+  for (let i = 5; i > 0; i--) {
+    for (let k = 0; k < i; k++) {
+      out += '*';
     }
     out += `<br>`;
   }
@@ -230,7 +230,7 @@ function t10() {
   for (let i = 1; i <= 5; i++) {
     for (let k = 1; k <= 10; k++) {
       if (k === 10) {
-        out += `${k * i}`
+        out += `${k * i}_`
       } else {
         out += `${i - 1}${k}_`;
       }
