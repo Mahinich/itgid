@@ -217,13 +217,16 @@ function f12() {
         [1, 0, 1, 0, 1, 0, 1, 0],
     ];
 
+    let out = '';
+
     for (let i = 0; i < a12.length; i++) {
         for (let k = 0; k < a12[i].length; k++) {
             if (a12[i][k] === 1) {
-                document.querySelector('.out-12').textContent += `${a12[i][k]} `;
+                out += `${a12[i][k]} `;
             }
         }
     }
+    document.querySelector('.out-12').textContent += out;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -267,9 +270,12 @@ let a14 = [
 ];
 
 function f14() {
+    let out = '';
     for (let i = 0; i < a14.length; i++) {
-        document.querySelector('.out-14').textContent += `${a14[i].length} `;
+        out += `${a14[i].length} `;
     }
+
+    document.querySelector('.out-14').textContent += out;
 }
 
 document.querySelector('.b-14').onclick = f14;
