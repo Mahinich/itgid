@@ -53,7 +53,7 @@ function f4() {
     let divOut4 = document.querySelectorAll('div.out-4');
 
     for (let item of divOut4) {
-        item.textContent = 4;
+        item.textContent += 4;
     }
 }
 
