@@ -206,6 +206,8 @@ document.querySelector('.b-11').onclick = f11;
 // Дан массив a12 который моделирует шахматную доску. Используя цикл выведите в out-12 единицы из этого массива. Все действия в функции f12. Функция запускается при нажатии на b12. Вывод через пробел.
 
 function f12() {
+    let output = document.querySelector('.out-12');
+
     let a12 = [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [1, 0, 1, 0, 1, 0, 1, 0],
@@ -226,7 +228,7 @@ function f12() {
             }
         }
     }
-    document.querySelector('.out-12').textContent += out;
+    document.querySelector('.out-12').textContent = out;
 }
 
 document.querySelector('.b-12').onclick = f12;
