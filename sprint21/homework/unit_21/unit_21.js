@@ -104,21 +104,28 @@ document.querySelector('.div-9').ontouchstart = t9;
 
 // Task 10 ============================================
 /*  Дан блок div-10. Добавьте на него событие touchmove. При срабатывании события - увеличивайте его ширину на 1. */
+div10 = document.querySelector('.div-10');
+let w = div10.offsetWidth;
 
-function t10() {
-
+function t10(e) {
+  w++;
+  e.target.style.width = `${w}px`;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.div-10').addEventListener('touchmove', t10);
 
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
 
-function t11() {
+function t11(e) {
+  console.log(e);
+  let rX = e.touches[0].radiusX.toFixed(2);
+  let rY = e.touches[0].radiusY.toFixed(2);
 
+  document.querySelector('.out-11').textContent = `RadiusX: ${rX}, radiusY: ${rY}`;
 }
 
-// ваше событие здесь!!!
+document.querySelector('.div-11').addEventListener('touchstart', t11);
 
 // Task 12 ============================================
 /*  Мини проект. Ознакомьтесь с версткой в задании 12.
@@ -139,13 +146,39 @@ next.onclick = nextFunction;
 const prev = document.querySelector('.prev');
 prev.onclick = prevFunction;
 
-function nextFunction() {
+const imgMax = document.querySelector('.img-12-max');
 
+let activeClassAndImgMaxSrc = () => {
+  images.forEach(item => item.classList.remove('active-img'));
+
+  images[count].classList.add('active-img');
+  imgMax.src = images[count].src;
+}
+
+function nextFunction() {
+  if (count + 1 < images.length) {
+    count++;
+  } else {
+    count = 0;
+  }
+
+  activeClassAndImgMaxSrc();
 }
 
 function prevFunction() {
+  if (count - 1 >= 0) {
+    count--;
+  } else {
+    count = images.length - 1;
+  }
 
+  activeClassAndImgMaxSrc();
 }
 
+function resetFunction() {
+  count = 0;
 
-// ваше событие здесь!!!
+  activeClassAndImgMaxSrc();
+}
+
+document.querySelector('.reset').onclick = resetFunction;
