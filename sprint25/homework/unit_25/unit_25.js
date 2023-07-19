@@ -74,9 +74,9 @@ function f3() {
 
   xhr.addEventListener('load', () => {
     const receivedData = JSON.parse(xhr.response);
-
+    console.log(receivedData);
     for (let item of receivedData.result) {
-      out += `${item['race']} `
+      out += `${item.race} `
     }
 
     document.querySelector('.out-3').textContent = out;
@@ -247,6 +247,7 @@ document.querySelector('.b-8').onclick = f8;
 
 function f9() {
   const input = document.querySelector('.i-9').value;
+
   const xhr = new XMLHttpRequest();
   xhr.open('POST', `${URL}/api/25/employee/read/${input}`);
   xhr.setRequestHeader('apikey', APIKEY);

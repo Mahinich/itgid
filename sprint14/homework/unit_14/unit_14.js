@@ -37,7 +37,7 @@ function showWeather(data) {
   document.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
 }
 
-function getWeather() {
+/* function getWeather() {
   const cityId = document.querySelector('.cities').value;
 
   fetch(`${param.url}weather?id=${cityId}&units=metric&APPID=${param.appid}`)
@@ -45,6 +45,17 @@ function getWeather() {
       return weather.json();
     })
     .then(showWeather);
+} */
+
+async function getWeather() {
+  const cityId = document.querySelector('.cities').value;
+  const serversData = await fetch(`${param.url}weather?id=${cityId}&units=metric&APPID=${param.appid}`);
+  console.log(serversData);
+
+  const formattedData = await serversData.json();
+  console.log(formattedData);
+
+  showWeather(formattedData);
 }
 
 getWeather();
