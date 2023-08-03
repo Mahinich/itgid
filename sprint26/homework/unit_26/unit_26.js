@@ -477,11 +477,13 @@ async function f18() {
     method: 'POST'
   });
   const receivedData = await response.json();
+  console.log(receivedData);
   const runes = receivedData.rune;
 
   for (let key in runes) {
     const runeImg = document.createElement('img');
     runeImg.src = `${URL}${runes[key]}`;
+    runeImg.alt = `${key}`
     output.append(runeImg);
   }
 }
